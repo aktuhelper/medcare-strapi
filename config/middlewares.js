@@ -1,6 +1,21 @@
 module.exports = [
   'strapi::logger',
   'strapi::errors',
+
+  // Move cors BEFORE security
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      origin: [
+        'https://medcare-2xlxs1mta-aktuhelpers-projects.vercel.app',
+      ],
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      keepHeaderOnError: true,
+    },
+  },
+
   {
     name: 'strapi::security',
     config: {
@@ -41,18 +56,7 @@ module.exports = [
       },
     },
   },
-  {
-    name: 'strapi::cors',
-    config: {
-      enabled: true,
-      origin: [
-        'https://medcare-2xlxs1mta-aktuhelpers-projects.vercel.app', // your frontend
-      ],
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
-      keepHeaderOnError: true,
-    },
-  },
+
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
