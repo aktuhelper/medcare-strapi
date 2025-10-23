@@ -8,6 +8,7 @@ module.exports = [
     config: {
       enabled: true,
       origin: [
+        'https://medcare-beta.vercel.app',
         'https://medcare-ziwjxoh56-aktuhelpers-projects.vercel.app/', // current frontend
         'https://medcare-2xlxs1mta-aktuhelpers-projects.vercel.app', // previous frontend (optional)
       ],
