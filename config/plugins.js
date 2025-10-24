@@ -5,7 +5,7 @@ module.exports = ({ env }) => {
     return {
       upload: {
         config: {
-          provider: 'upload-cloudinary', // ✅ keep this
+          provider: 'cloudinary', // ✅ keep this
           providerOptions: {
             cloud_name: env('CLOUDINARY_NAME'),
             api_key: env('CLOUDINARY_KEY'),
