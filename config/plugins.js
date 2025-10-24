@@ -1,15 +1,14 @@
 // ./config/plugins.js
 module.exports = ({ env }) => {
-   
-  
+    console.log('Cloudinary Name:', env('CLOUDINARY_CLOUD_NAME'));
     return {
       upload: {
         config: {
-          provider: 'cloudinary', // ✅ keep this
+          provider: 'cloudinary',
           providerOptions: {
-            cloud_name: env('CLOUDINARY_NAME'),
-            api_key: env('CLOUDINARY_KEY'),
-            api_secret: env('CLOUDINARY_SECRET'),
+            cloud_name: env('CLOUDINARY_CLOUD_NAME'),
+            api_key: env('CLOUDINARY_API_KEY'),
+            api_secret: env('CLOUDINARY_API_SECRET'),
           },
           actionOptions: {
             upload: {},
